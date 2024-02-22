@@ -10,6 +10,8 @@ from bs4 import BeautifulSoup
 import unicodedata
 from textblob import TextBlob
 
+nlp=spacy.load('en_core_web_lg')
+
 def _get_wordcounts(x):
 	length = len(str(x).split())
 	return length
@@ -42,7 +44,7 @@ def _get_degit_counts(x):
 def _get_uppercase_counts(x):
 	return len([t for t in x.split() if t.isupper()])
 
-def _get_cont_exp(x):
+def _cont_exp(x):
 	cList = {
 	"ain't": "am not",
 	"aren't": "are not",
@@ -228,16 +230,18 @@ def _make_base(x):
 		x_list.append(lem)
 	return " ".join(x_list)
 
-def _remove_common_words(x, n=20):
-	text=x.split()
+def _get_value_counts(df, col):
+	text = " ".join(df[col])
+	text=text.split()
 	comm_word=pd.Series(text).value_counts()
+	return comm_word
+
+def _remove_common_words(x, comm_word, n=20):
 	fq=comm_word[:n]
 	x = " ".join([t for t in x.split() if t not in fq])
 	return x
 
-def _remove_rare_words(x, n=20):
-	text=x.split()
-	comm_word=pd.Series(text).value_counts()
+def _remove_rare_words(x, comm_word,n=20):
 	fq=comm_word.tail(n)
 	x = " ".join([t for t in x.split() if t not in fq])
 	return x

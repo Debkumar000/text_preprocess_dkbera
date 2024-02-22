@@ -5,7 +5,7 @@ with open('README.md','r') as file:
 
 setuptools.setup(
 	name='text_preprocess_dkbera',
-	version = '0.0.2',
+	version = '0.0.3',
 	author = 'Debkumar Bera',
 	author_email = 'debkumarbera150@gmail.com',
 	description = 'This is text preprocessing package',

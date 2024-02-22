@@ -34,7 +34,7 @@ def _get_hastag_counts(x):
 	return hastag_len
 
 def _get_mention_counts(x):
-	mention_count = len([t for t in text.split() if t.startswith('@')])
+	mention_count = len([t for t in x.split() if t.startswith('@')])
 	return mention_count
 
 def _get_degit_counts(x):

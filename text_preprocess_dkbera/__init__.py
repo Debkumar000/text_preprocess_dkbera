@@ -1,6 +1,6 @@
 from text_preprocess_dkbera import utils
 
-__version__ = '0.0.5'
+__version__ = '0.0.6'
 
 
 def get_wordcounts(x):

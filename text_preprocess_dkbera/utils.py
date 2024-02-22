@@ -216,7 +216,7 @@ def _remove_accented_chars(x):
 	return x
 
 def _remove_stopwords(x):
-	x=" ".join(x for x in text.split() if x not in stopwords)
+	x=" ".join(t for t in x.split() if t not in stopwords)
 	return x
 
 def _make_base(x):

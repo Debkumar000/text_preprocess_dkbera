@@ -1,6 +1,6 @@
 from text_preprocess_dkbera import utils
 
-__version__ = '0.0.6'
+__version__ = '0.0.7'
 
 
 def get_wordcounts(x):
@@ -21,8 +21,8 @@ def get_hastag_counts(x):
 def get_mention_counts(x):
 	return utils._get_mention_counts(x)
 
-def get_degit_counts(x):
-	return utils._get_degit_counts(x)
+def get_digit_counts(x):
+	return utils._get_digit_counts(x)
 
 def get_uppercase_counts(x):
 	return utils._get_uppercase_counts(x)

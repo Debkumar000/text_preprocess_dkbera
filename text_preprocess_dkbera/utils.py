@@ -37,7 +37,7 @@ def _get_mention_counts(x):
 	mention_count = len([t for t in x.split() if t.startswith('@')])
 	return mention_count
 
-def _get_degit_counts(x):
+def _get_digit_counts(x):
 	digit_count=len([t for t in x.split() if t.isdigit()])
 	return digit_count
 

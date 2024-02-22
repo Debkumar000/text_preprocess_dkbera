@@ -27,7 +27,7 @@ def _get_avg_wordlength(x):
 
 def _get_stopword_counts(x):
 	l = len([t for t in x.split() if t in stopwords])
-	return length
+	return l
 
 def _get_hastag_counts(x):
 	hastag_len = len([t for t in x.split() if t.startswith('#')])
